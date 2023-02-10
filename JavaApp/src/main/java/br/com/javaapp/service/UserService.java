@@ -62,16 +62,8 @@ public class UserService {
 		return userRepository.save(user);
 	}
 	
-	public User findByEmail(String email) {
-		List <User> users = userRepository.findAll();
-		
-		for(int i = 0; i<users.size(); i++) {
-			if(users.get(i).getEmail().equals(email)) {
-				//System.out.println(users.get(i).getEmail());
-				return users.get(i);
-			}
-		}
-	
-		return null;
+	public Optional<User> findByEmail(String email) {
+		return Optional.ofNullable(userRepository.findByEmail(email));
+
 	}
 }

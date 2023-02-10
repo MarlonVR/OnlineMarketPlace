@@ -15,6 +15,6 @@ public class UserTests {
 	@Test
 	public void create() {
 		
-		User user = userService.findByEmail("marlonmmmmmmgabrielvr@gmail.com");
+		
 	}
 }

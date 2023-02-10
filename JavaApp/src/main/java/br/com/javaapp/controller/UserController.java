@@ -11,13 +11,14 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.javaapp.domain.User;
 import br.com.javaapp.service.UserService;
 
 @RestController
-@RequestMapping("/usuario")
+@RequestMapping("/user")
 public class UserController {
 
 	@Autowired
@@ -50,5 +51,10 @@ public class UserController {
 	@PutMapping
 	public User put(@RequestBody User user) {
 		return userService.edit(user);
+	}
+	// ainda nao consegui verificar o email
+	@GetMapping("/verify-email")
+	public String verifyEmail(@RequestParam String email) {
+		return userService.findByEmail(email).get().getEmail();
 	}
 }
