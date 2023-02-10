@@ -1,0 +1,30 @@
+/* Imagem de fundo */
+body{
+  background-image: url('../imgs/fundo.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* Nav (Barra de Navegação */
+.BNav {
+  background-color: #7749F8;
+  /* height: 40px; */
+  
+}
+
+/* Formulário da Nav (Barra de navegação) */
+.formularioBNav{
+  border-radius: 12px;
+  text-align: center;  
+}
+
+/* Textos da Nav (Barra de navegação) */
+.textoBNav{
+  color: white;
+}
+
+
+/* Cor de fundo dos containers */
+.corDeFundo{
+  background-color: #F1F1F1;
+}
