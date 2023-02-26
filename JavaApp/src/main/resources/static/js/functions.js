@@ -25,7 +25,7 @@ function checkEmailAvailability() {
   //script continua a executar enquanto aguarda a resposta da requisição. Se o valor for "false", a 
   //requisição será síncrona, o que significa que o script aguarda a resposta antes de continuar a 
   //executar. No meu caso como quero fazer um teste sem recarregar a pagina, é necessario o true.
-  xhr.open("GET", "/verify-email?email=" + email, true);
+  xhr.open("GET", "/user/verify-email?email=" + email, true);
   
   //Definindo o comportamento da requisição: O comportamento da requisição é definido usando o evento 
   //onreadystatechange. Esse evento é acionado sempre que o estado da requisição muda.
