@@ -29,7 +29,7 @@ public class JavaAppController {
 	    return modelAndView;
     }
 	
-	@PostMapping("/signup_process")
+	@PostMapping("/signup_success")
 	public ModelAndView signupProcess(User user) {
 		userService.post(user);
 		

@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.javaapp.domain.User;
@@ -52,9 +53,11 @@ public class UserController {
 	public User put(@RequestBody User user) {
 		return userService.edit(user);
 	}
-	// ainda nao consegui verificar o email
+	
 	@GetMapping("/verify-email")
-	public String verifyEmail(@RequestParam String email) {
-		return userService.findByEmail(email).get().getEmail();
+	@ResponseBody
+	public boolean verifyEmail(@RequestParam String email) {
+	    Optional<User> user = userService.findByEmail(email);
+	    return user.isPresent();
 	}
 }

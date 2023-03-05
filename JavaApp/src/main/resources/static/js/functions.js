@@ -4,9 +4,11 @@ function checkPassword(){
 	
 	if(password != confirmPassword){
 		passwordResult.innerHTML = "<span style='color:red;'>As senhas não são iguais.</span>";
+		document.getElementById("confirmPassword").setCustomValidity("As senhas não coincidem");
 	}
 	else{
 		passwordResult.innerHTML = "";
+		document.getElementById("confirmPassword").setCustomValidity("");
 	}
 }
 
@@ -33,9 +35,11 @@ function checkEmailAvailability() {
     if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
       var response = JSON.parse(xhr.responseText);
       if (response) {
-        emailResult.innerHTML = "";
+        emailResult.innerHTML = "<span style='color:red;'>O email já está em uso</span>";
+        document.getElementById("email").setCustomValidity("O email já está em uso")
       } else {
-        emailResult.innerHTML = "O email já está em uso";
+        emailResult.innerHTML = "";
+        document.getElementById("email").setCustomValidity("")
       }
     }
   };
