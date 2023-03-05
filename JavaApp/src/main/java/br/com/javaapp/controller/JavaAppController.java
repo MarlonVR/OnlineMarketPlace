@@ -38,7 +38,6 @@ public class JavaAppController {
 	    return modelAndView;
 	}
 	
-	
 	@GetMapping("/home")
 	public ModelAndView home() {
 		ModelAndView modelAndView = new ModelAndView();
